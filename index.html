@@ -231,133 +231,143 @@
             margin-top: 40px;
         }
         
-        /* ===== 关于公司 - 方案二布局 ===== */
+        /* ===== 关于公司 - 上下平铺布局（根据您的要求调整）===== */
         .about {
             background-color: var(--light-gray);
         }
         
-        .about-grid {
+        .about-vertical {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* 核心业务双卡片并排 */
+        .core-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 50px;
-            margin-top: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
         }
         
-        .about-main h3 {
-            font-size: 2rem;
-            color: var(--primary-blue);
-            margin-bottom: 30px;
-            line-height: 1.2;
+        .core-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
         }
         
-        .core-business {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            align-items: flex-start;
+        .core-card:hover {
+            border-bottom-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
         }
         
-        .core-icon {
+        .core-card .core-icon {
             background: var(--primary-blue);
             color: white;
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .core-card h3 {
+            color: var(--primary-blue);
             font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        
-        .core-text h4 {
-            color: var(--primary-blue);
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-        }
-        
-        .core-text p {
-            color: #555;
-            line-height: 1.5;
-        }
-        
-        .about-main > p {
-            margin-top: 15px;
-            color: #555;
-            border-top: 1px dashed #ccc;
-            padding-top: 25px;
-        }
-        
-        .about-sidebar {
-            position: relative;
-        }
-        
-        .founder-spotlight {
-            background: white;
-            padding: 35px 25px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            position: sticky;
-            top: 120px;
-        }
-        
-        .founder-avatar {
-            font-size: 3.8rem;
-            color: var(--primary-blue);
             margin-bottom: 15px;
         }
         
-        .founder-spotlight h4 {
-            color: var(--primary-blue);
-            font-size: 1.6rem;
-            margin-bottom: 5px;
+        .core-card p {
+            color: #555;
+            line-height: 1.6;
         }
         
-        .founder-role {
+        /* 创始人卡片 - 全宽 */
+        .founder-full {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            border-left: 8px solid var(--accent-gold);
+            margin-top: 20px;
+        }
+        
+        .founder-avatar {
+            font-size: 4.5rem;
+            color: var(--primary-blue);
+            flex-shrink: 0;
+        }
+        
+        .founder-info h4 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+        
+        .founder-title {
             color: var(--accent-gold);
             font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
             letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-size: 1rem;
         }
         
-        .founder-spotlight > p {
-            font-style: italic;
+        .founder-info p {
             color: #555;
-            margin-bottom: 25px;
-            line-height: 1.6;
-            font-size: 1.05rem;
+            margin-bottom: 15px;
         }
         
-        .company-highlights {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 25px;
+        .founder-quote {
+            font-style: italic;
+            color: #666;
+            font-size: 1.1rem;
             border-top: 1px solid #eee;
-            padding-top: 25px;
+            padding-top: 20px;
+            margin-top: 15px;
         }
         
-        .company-highlights div {
-            text-align: center;
+        .company-badges {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
         }
         
-        .company-highlights span {
-            display: block;
-            font-size: 1.8rem;
-            font-weight: 700;
+        .badge {
+            background: var(--light-gray);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
             color: var(--primary-blue);
-            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
         
-        @media (max-width: 992px) {
-            .about-grid {
+        .badge i {
+            color: var(--accent-gold);
+        }
+        
+        @media (max-width: 768px) {
+            .core-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
             }
-            .founder-spotlight {
-                position: static;
+            .founder-full {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+            .company-badges {
+                justify-content: center;
             }
         }
         
@@ -489,7 +499,7 @@
             font-size: 0.9rem;
         }
         
-        /* ===== 响应式微调 ===== */
+        /* ===== 响应式通用调整 ===== */
         @media (max-width: 768px) {
             .header-container {
                 padding: 15px 0;
@@ -601,49 +611,45 @@
         </div>
     </section>
 
-    <!-- About Us - 方案二全新布局 -->
+    <!-- About Us - 上下平铺布局（已按您的要求优化） -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
                 <h2>About KINGCARGO PTY LTD</h2>
-                <p>A leading Australia–China trade and logistics partner—delivering end-to-end supply chain solutions.</p>
+                <p>Your trusted Australia–China trade partner — logistics and materials, seamlessly delivered.</p>
             </div>
             
-            <!-- 方案二：双栏网格布局 -->
-            <div class="about-grid">
-                <!-- 左侧：核心业务 -->
-                <div class="about-main">
-                    <h3>Your Australia–China Trade Partner</h3>
-                    <div class="core-business">
+            <div class="about-vertical">
+                <!-- 上段：两大核心业务并排卡片 -->
+                <div class="core-grid">
+                    <div class="core-card">
                         <div class="core-icon"><i class="fas fa-ship"></i></div>
-                        <div class="core-text">
-                            <h4>Logistics & Supply Chain</h4>
-                            <p>International ocean/air freight, customs clearance, warehousing, distribution, and supply chain management.</p>
-                        </div>
+                        <h3>Logistics & Supply Chain</h3>
+                        <p>International ocean/air freight, customs clearance, warehousing, distribution, and supply chain management — providing end-to-end visibility and control.</p>
                     </div>
-                    <div class="core-business">
+                    <div class="core-card">
                         <div class="core-icon"><i class="fas fa-hard-hat"></i></div>
-                        <div class="core-text">
-                            <h4>🏗️ Building Materials Export</h4>
-                            <p>Premium Australian timber, natural stone, tiles, and interior finishes – sourced, packaged, and shipped directly to China.</p>
-                        </div>
+                        <h3>🏗️ Building Materials Export</h3>
+                        <p>Premium Australian timber, natural stone, tiles, and interior finishes. We handle compliant sourcing, packaging, and direct shipping to Chinese construction sites and distributors.</p>
                     </div>
-                    <p>Our mission is to reduce operational costs and enhance supply chain transparency for our clients worldwide.</p>
                 </div>
                 
-                <!-- 右侧：创始人卡片 + 信任亮点 -->
-                <div class="about-sidebar">
-                    <div class="founder-spotlight">
-                        <div class="founder-avatar">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
+                <!-- 下段：创始人全宽卡片 + 公司荣誉徽章 -->
+                <div class="founder-full">
+                    <div class="founder-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="founder-info">
                         <h4>Mr. Xiaoyi Zhu</h4>
-                        <p class="founder-role">Founder, 10+ years trade experience</p>
-                        <p>“We believe exceptional logistics service is the key to successful international trade.”</p>
-                        <div class="company-highlights">
-                            <div><span>6+</span> Years Experience</div>
-                            <div><span>100%</span> Australian Owned</div>
-                            <div><span>24/7</span> Client Support</div>
+                        <div class="founder-title">FOUNDER & CEO</div>
+                        <p>With over 10 years of experience in international trade and logistics management, Mr. Zhu has held senior executive roles at global logistics firms. In 2020, he founded Kingcargo with a vision to build a client-centric, efficient, and reliable international trade platform.</p>
+                        <div class="founder-quote">
+                            “We believe exceptional logistics service is the key to successful international trade.”
+                        </div>
+                        <div class="company-badges">
+                            <span class="badge"><i class="fas fa-check-circle"></i> 100% Australian Owned</span>
+                            <span class="badge"><i class="fas fa-clock"></i> 24/7 Client Support</span>
+                            <span class="badge"><i class="fas fa-trophy"></i> 6+ Years Experience</span>
                         </div>
                     </div>
                 </div>
