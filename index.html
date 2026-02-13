@@ -300,6 +300,8 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
         
         .service-card:hover {
@@ -319,12 +321,25 @@
         
         .service-content {
             padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .service-content h3 {
             color: var(--primary-blue);
             margin-bottom: 15px;
             font-size: 1.5rem;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        
+        .service-content .btn {
+            align-self: flex-start;
+            margin-top: auto;
         }
         
         /* 页脚 */
@@ -541,7 +556,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>About KINGCARGO PTY LTD</h2>
-                <p>A leading global logistics and trade partner-delivering end-to-end supply chain solutions.</p>
+                <p>A leading global logistics and trade partner—delivering end-to-end supply chain solutions.</p>
             </div>
             
             <div class="about-content">
@@ -549,14 +564,15 @@
                     <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Kingcargo公司办公环境">
                 </div>
                 
-               <div class="about-text">
-    <h3>Your Trusted Global Trade Partner</h3>
-    <p>We specialize in international ocean and air freight, customs clearance and inspection, warehousing and distribution, supply chain management—<strong>and the export of premium Australian building & decoration materials to China</strong>. Delivering a one-stop trade solution for our clients. With extensive industry experience and a global network, we ensure your cargo and materials arrive safely and on time, every time.</p>
-    <p>Our mission is to empower businesses to succeed in the global marketplace by delivering efficient logistics solutions that reduce operational costs and enhance supply chain transparency.</p>
-</div>
+                <div class="about-text">
+                    <h3>Your Trusted Global Trade Partner</h3>
+                    <p>We specialize in building & decoration materials export,international ocean and air freight, customs clearance and inspection, warehousing and distribution, supply chain management—<strong>and the export of premium Australian building & decoration materials to China</strong>. Delivering a one-stop trade solution for our clients. With extensive industry experience and a global network, we ensure your cargo and materials arrive safely and on time, every time.</p>
+                    <p>Our mission is to empower businesses to succeed in the global marketplace by delivering efficient logistics solutions that reduce operational costs and enhance supply chain transparency.</p>
+                    
+                    <!-- 创始人信息移入about-text内部，布局更紧凑 -->
                     <div class="founder-info">
                         <h4><i class="fas fa-user-tie"></i> Our Founder</h4>
-                        <p><strong>Mr.Xiaoyi Zhu </strong>,With over 10 years of experience in international trade and logistics management, Mr. Xiaoyi Zhu has held senior executive roles at several global logistics firms and possesses deep expertise in worldwide supply chain operations. In 2020, he founded Kingcargo with a vision to build a client-centric, efficient, and reliable international trade platform.</p>
+                        <p><strong>Mr. Xiaoyi Zhu</strong>, With over 10 years of experience in international trade and logistics management, Mr. Xiaoyi Zhu has held senior executive roles at several global logistics firms and possesses deep expertise in worldwide supply chain operations. In 2020, he founded Kingcargo with a vision to build a client-centric, efficient, and reliable international trade platform.</p>
                         <p>"We believe that exceptional logistics service is the key to successful international trade." - Xiaoyi Zhu</p>
                     </div>
                 </div>
@@ -564,30 +580,40 @@
         </div>
     </section>
 
-    <!-- Our service -->
+    <!-- Our Services -->
     <section id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Our service</h2>
-                <p>We provide comprehensive international trade and logistics solutions to meet our clients'diverse needs.</p>
+                <h2>Our Services</h2>
+                <p>We provide comprehensive international trade and logistics solutions to meet our clients' diverse needs.</p>
             </div>
             
             <div class="services-grid">
+                <!-- 1. 新增：建筑装修装饰材料出口（置于首位，突出核心业务） -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>🏗️ Building & Decoration Materials Export</h3>
+                        <p>Specialized in exporting high-quality Australian timber, natural stone, premium tiles, and interior finishing materials. We handle compliant sourcing, packaging, and logistics directly to Chinese construction sites and distributors.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- 2. 国际海运 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-ship"></i>
                     </div>
-                    <div class="service-item">
-    <h4>🏗️ Building & Decoration Materials Export</h4>
-    <p>Specialized in exporting high-quality Australian timber, natural stone, premium tiles, and interior finishing materials. We handle compliant sourcing, packaging, and logistics directly to Chinese construction sites and distributors.</p>
-</div>
                     <div class="service-content">
-                        <h3>Internation Ocean Freight</h3>
+                        <h3>International Ocean Freight</h3>
                         <p>We offer both Full Container Load (FCL) and Less than Container Load (LCL) ocean freight services, covering all major ports worldwide. Through our partnerships with multiple shipping lines, we secure optimal routes and the most competitive rates for our clients.</p>
-                        <a href="#" class="btn">Discover More</a>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
                 
+                <!-- 3. 国际空运 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-plane"></i>
@@ -595,10 +621,11 @@
                     <div class="service-content">
                         <h3>International Air Freight</h3>
                         <p>Fast, secure air freight services covering all major airports worldwide. We offer door-to-door delivery, ideal for urgent shipments and high-value cargo.</p>
-                        <a href="#" class="btn">Discover More</a>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
                 
+                <!-- 4. 仓储与配送 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-boxes"></i>
@@ -610,6 +637,7 @@
                     </div>
                 </div>
                 
+                <!-- 5. 报关与合规 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-file-contract"></i>
@@ -617,21 +645,23 @@
                     <div class="service-content">
                         <h3>Customs Clearance & Compliance</h3>
                         <p>Professional customs clearance and inspection services to ensure smooth and timely cargo release. We also provide trade compliance consulting to help clients adhere to import and export regulations in countries worldwide.</p>
-                        <a href="#" class="btn">Learn more</a>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
                 
+                <!-- 6. 供应链管理 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Surply Chain Management</h3>
+                        <h3>Supply Chain Management</h3>
                         <p>End-to-end supply chain solutions that optimize your entire logistics process. We also offer supply chain visibility and data analytics services to drive smarter decisions.</p>
-                        <a href="#" class="btn">Learn more</a>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
                 
+                <!-- 7. 进出口咨询 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-handshake"></i>
@@ -639,7 +669,7 @@
                     <div class="service-content">
                         <h3>Export & Import Consulting</h3>
                         <p>Professional international trade consulting services to help clients enter new markets. We provide expert guidance on market access, trade agreements, and risk management.</p>
-                        <a href="#" class="btn">Learn more</a>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -679,7 +709,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Kingcargo Trading Co.,Ltd. All rights reserved. Founder: Mr.Xiaoyi Zhu</p>
+                <p>&copy; 2023 Kingcargo Trading Co.,Ltd. All rights reserved. Founder: Mr. Xiaoyi Zhu</p>
             </div>
         </div>
     </footer>
@@ -713,5 +743,4 @@
         });
     </script>
 </body>
-
 </html>
