@@ -216,7 +216,7 @@
         }
         
         .hero p {
-            font-size: 1.2rem; /* 从1.1rem增大 */
+            font-size: 1.2rem;
             margin-bottom: 25px;
             max-width: 650px;
             margin-left: auto;
@@ -231,7 +231,7 @@
             margin-top: 30px;
         }
         
-        /* ===== 关于公司 - 上下平铺布局 ===== */
+        /* ===== 关于公司 - 一段文字版 ===== */
         .about {
             background-color: var(--light-gray);
         }
@@ -241,51 +241,20 @@
             margin: 0 auto;
         }
         
-        .core-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .core-card {
+        .about-text-block {
             background: white;
-            padding: 30px 25px;
-            border-radius: 16px;
+            padding: 35px 30px;
+            border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
-            transition: var(--transition);
-            border-bottom: 4px solid transparent;
+            margin-bottom: 40px;
+            border-left: 8px solid var(--accent-gold);
         }
         
-        .core-card:hover {
-            border-bottom-color: var(--accent-gold);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        .core-card .core-icon {
-            background: var(--primary-blue);
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 18px;
-        }
-        
-        .core-card h3 {
-            color: var(--primary-blue);
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-        }
-        
-        .core-card p {
-            color: #555;
-            line-height: 1.6;
-            font-size: 1.05rem; /* 从0.95rem增大 */
+        .about-text-block p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 0;
         }
         
         .founder-full {
@@ -323,14 +292,14 @@
         .founder-info p {
             color: #555;
             margin-bottom: 12px;
-            font-size: 1.05rem; /* 从0.95rem增大 */
+            font-size: 1.05rem;
             line-height: 1.6;
         }
         
         .founder-quote {
             font-style: italic;
             color: #666;
-            font-size: 1.1rem; /* 从1rem增大 */
+            font-size: 1.1rem;
             border-top: 1px solid #eee;
             padding-top: 18px;
             margin-top: 12px;
@@ -346,7 +315,7 @@
             background: var(--light-gray);
             padding: 5px 14px;
             border-radius: 30px;
-            font-size: 0.8rem; /* 标签字体，保持原小尺寸 */
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--primary-blue);
             display: inline-flex;
@@ -406,7 +375,7 @@
         .service-content p {
             margin-bottom: 18px;
             flex: 1;
-            font-size: 1.05rem; /* 从0.95rem增大 */
+            font-size: 1.05rem;
             line-height: 1.6;
             color: #555;
         }
@@ -480,11 +449,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1rem; /* 从0.9rem增大 */
+            font-size: 1rem;
         }
         
         .footer-about p {
-            font-size: 1rem; /* 从0.9rem增大 */
+            font-size: 1rem;
             line-height: 1.6;
         }
         
@@ -496,11 +465,8 @@
             font-size: 0.85rem;
         }
         
-        /* ===== 响应式调整（同步增大移动端字体） ===== */
+        /* ===== 响应式调整 ===== */
         @media (max-width: 992px) {
-            .core-grid {
-                grid-template-columns: 1fr;
-            }
             .founder-full {
                 flex-direction: column;
                 text-align: center;
@@ -550,7 +516,7 @@
                 font-size: 2.2rem;
             }
             .hero p {
-                font-size: 1.1rem; /* 移动端适当调小，但仍比原大 */
+                font-size: 1.1rem;
             }
             .hero-btns {
                 flex-direction: column;
@@ -566,12 +532,12 @@
             section {
                 padding: 50px 0;
             }
-            .core-card p,
+            .about-text-block p,
             .founder-info p,
             .service-content p,
             .footer-about p,
             .footer-contact p {
-                font-size: 1rem; /* 移动端稍小，保证阅读舒适 */
+                font-size: 1rem;
             }
             .founder-quote {
                 font-size: 1.05rem;
@@ -635,7 +601,7 @@
         </div>
     </section>
 
-    <!-- About Us - 上下平铺布局 -->
+    <!-- About Us - 一段文字版（已按您的要求修改） -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
@@ -644,19 +610,12 @@
             </div>
             
             <div class="about-vertical">
-                <div class="core-grid">
-                    <div class="core-card">
-                        <div class="core-icon"><i class="fas fa-ship"></i></div>
-                        <h3>Logistics & Supply Chain</h3>
-                        <p>International ocean/air freight, customs clearance, warehousing, distribution, and supply chain management — providing end-to-end visibility and control.</p>
-                    </div>
-                    <div class="core-card">
-                        <div class="core-icon"><i class="fas fa-hard-hat"></i></div>
-                        <h3>🏗️ Building Materials Export</h3>
-                        <p>Premium Australian timber, natural stone, tiles, and interior finishes. We handle compliant sourcing, packaging, and direct shipping to Chinese construction sites and distributors.</p>
-                    </div>
+                <!-- 公司简介 - 一段完整文字（合并物流+建材） -->
+                <div class="about-text-block">
+                    <p>KINGCARGO PTY LTD is your trusted Australia–China trade partner, specializing in international ocean and air freight, customs clearance, warehousing, distribution, and supply chain management — providing end-to-end visibility and control. We also export premium Australian building and decoration materials, including timber, natural stone, tiles, and interior finishes, handling compliant sourcing, packaging, and direct shipping to Chinese construction sites and distributors. Our mission is to reduce operational costs and enhance supply chain transparency for our clients worldwide.</p>
                 </div>
                 
+                <!-- 创始人卡片（完全保留） -->
                 <div class="founder-full">
                     <div class="founder-avatar">
                         <i class="fas fa-user-circle"></i>
